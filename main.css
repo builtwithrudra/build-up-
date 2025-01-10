@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'spartan', sans-serif;
+    line-height: 1.5;
+    background-color: #f4f4f4;
+    /* Light background color for contrast */
+
+}
+
+/* Header Section */
+#header {
+    display: flex;
+    /* Flexbox for layout */
+    align-items: center;
+    /* Align items vertically */
+    justify-content: space-between;
+    /* Space between logo and navbar */
+    padding: 20px 80px;
+    background-color: #E3E6F6;
+    /* Dark background for header */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    /* Sticky header */
+    top: 0;
+    z-index: 999;
+    position: sticky;
+    left: 0;
+}
+
+/* Logo Styling */
+.logo {
+    height: 60px;
+    /* Adjust the logo size */
+    width: auto;
+    /* Maintain aspect ratio */
+}
+
+/* Navbar Styling */
+#navbaar {
+    list-style-type: none;
+    /* Remove bullet points */
+    display: flex;
+    /* Align links in a row */
+    gap: 25px;
+    /* Add spacing between links */
+    margin: 0;
+    align-items: center;
+    /* Vertically align links */
+}
+
+#navbaar li {
+    position: relative;
+    /* Needed for any dropdowns */
+}
+
+#navbaar a {
+    text-decoration: none;
+    /* Remove underline */
+    color: rgb(17, 17, 17);
+    /* Navbar link color */
+    font-size: 18px;
+    /* Adjust font size for better readability */
+    padding: 8px 12px;
+    /* Add padding for click area */
+    transition: color 0.3s ease;
+    /* Smooth transition on hover */
+}
+
+#navbaar li a:hover,
+#navbaar li a.active {
+    color: #088178;
+    /* Highlight link on hover */
+}
+
+#navbaar li a.active::after,
+#navbaar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+
+
+}
+
+
+/* Shopping Cart Icon */
+.fas {
+    font-size: 20px;
+    /* Adjust icon size */
+    color: rgb(0, 0, 0.06);
+    transition: color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.fas:hover {
+    color: #088178
+        /* Highlight cart icon on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        /* Stack logo and navbar vertically */
+        align-items: flex-start;
+        /* Align items to the left */
+        padding: 15px;
+    }
+
+    #navbaar {
+        flex-direction: column;
+        /* Stack menu items vertically */
+        gap: 15px;
+        width: 100%;
+        /* Full width */
+    }
+
+    #navbaar a {
+        font-size: 16px;
+        /* Adjust font size for smaller screens */
+    }
+
+    .logo {
+        margin-bottom: 15px;
+        /* Add spacing below the logo */
+    }
+}
+
+@media (max-width: 480px) {
+    #navbaar {
+        gap: 10px;
+        /* Reduce gap for smaller screens */
+    }
+
+    #navbaar a {
+        font-size: 14px;
+        /* Further reduce font size */
+    }
+
+    .logo {
+        height: 50px;
+        /* Adjust logo size */
+    }
+}
+
+/* HOME PAGE */
+
+#hero {
+    background-image: url(newhero.png);
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 10% right 120;
+    background-color: #088178;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Define base text size using CSS variables */
+:root {
+    --base-font-size: 16px;
+}
+
+/* Apply the base font size to the body */ 
+ body {
+    font-size: var(--base-font-size);
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.2;
+    color: #000000;
+    margin: 0;
+    padding: 0; 
+
+} 
+
+/* Adjust text size dynamically for different sections */
+h1 {
+    font-size: calc(var(--base-font-size) * 2.7);
+    /* Twice the base size */
+}
+
+h2 {
+    font-size: calc(var(--base-font-size) * 2.7);
+}
+
+p {
+    font-size: calc(var(--base-font-size) * 1);
+
+}
+
+
+.section-p1 {
+    padding: 40px 80px;
+  }
+  
+  .section-m1 {
+    margin: 40px 0;
+  }
+
+footer {
+    font-size: calc(var(--base-font-size) * 1.2);
+
+}
+
+.container button {
+    margin-top: 25px;
+    /* Adds space above the button */
+}
+
+
+#hero h4 {
+    padding-bottom: 15px;
+
+}
+
+#hero h1 {
+    color: #088178;
+}
+
+#hero button {
+    background-image: url(button.png);
+    background-color:transparent;
+    color: #088178;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+
+}
+#feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Targeting the image directly */
+.feature-image {
+    padding: 20px; /* Adds padding around the image */
+    display: block; /* Ensures image is treated as a block element */
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Maintains aspect ratio */
+  }
+  
+  /* Alternatively, if the image is inside a container */
+  .image-container {
+    display: inline-block; /* Keeps the image inline */
+    padding: 20px; /* Adds padding inside the container */
+    background-color: #f0f0f0; /* Optional background color for the container */
+  }
+  
+  .image-container img {
+    max-width: 100%; /* Ensures image is responsive */
+    height: auto; /* Maintains aspect ratio */
+  }
+  
+#feature .fe-box {
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+#feature .fe-box:hover {
+    box-shadow: 10px 10px 544px rgba(70, 62, 221, 0.1);
+}
+
+#feature .fe-box h6 {
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #088178;
+    background-color: #fddde4;
+}
+
+
+#feature .fe-box img {
+    width: 100%;
+    margin-bottom: 10px;
+    
+}
+
+#feature .fe-box:nth-child(2) h6 {
+    background-color: #d1e8f2;
+}
+#feature .fe-box:nth-child(3) h6 {
+    background-color: #cdd4f8;
+}
+#feature .fe-box:nth-child(4) h6 {
+    background-color: #f6dbf6;
+}
+#feature .fe-box:nth-child(5) h6 {
+    background-color: #fff2e5;
+}
+#feature .fe-box:nth-child(5) h6 {
+    background-color: #cdebbc;
+}
+
+
+
+#product1 {
+    text-align: center;
+    margin: 0 auto; /* Center the product container */
+    padding: 40px 20px; /* Add padding for a cleaner, more spacious look */
+    max-width: 100%; /* Ensure the container doesn't exceed viewport width */
+}
+
+#product1 .pro-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between; /* Evenly space products */
+    gap: 20px; /* Space between each product box */
+    margin: 0 auto; /* Center content horizontally */
+}
+
+#product1 .pro {
+    flex: 1 1 calc(25% - 20px); /* Flexible width, accounting for gap */
+    min-width: 250px; /* Ensure products don't collapse below 250px */
+    padding: 20px;
+    border: 1px solid #cce7d0;
+    border-radius: 15px; /* Rounded corners for a soft look */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for a premium feel */
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    position: relative;
+}
+
+#product1 .pro:hover {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+#product1 .pro img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px; /* Soft rounded corners */
+    margin-bottom: 15px;
+}
+
+#product1 .pro .des {
+    text-align: start;
+}
+
+#product1 .pro .des span {
+    color: #606063;
+    font-size: 13px;
+}
+
+#product1 .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 600; /* Slightly heavier font for emphasis */
+}
+
+#product1 .pro .des i {
+    font-size: 14px;
+    color: rgb(243, 181, 25);
+}
+
+#product1 .pro .des h4 {
+    padding-top: 7px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #088178;
+}
+
+#product1 h2 {
+    font-size: 36px; /* Adjust the font size as per your design */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 10px; /* Space between the heading and the paragraph */
+    font-weight: 700; /* Make the font bold for emphasis */
+    line-height: 1.2; /* Control the spacing between lines */
+    color: #333; /* Dark color for the heading */
+}
+
+#product1 p {
+    font-size: 18px; /* Adjust the font size of the description */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 20px; /* Space below the paragraph */
+    color: #666; /* Slightly lighter color for the paragraph */
+    line-height: 1.5; /* Make the paragraph line spacing more readable */
+}
+
+
+.cart-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #e8f6ea;
+    font-size: 18px;
+    font-weight: bold;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cart-icon:hover {
+    background-color: #088178;
+    color: #fff;
+    border-color: #088178;
+    transform: scale(1.1); /* Smooth zoom effect */
+}
+
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("b2.jpg");
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+
+}
+#banner h4 {
+    color: #fff;
+    font-size: 16px;   
+}
+#banner h2 {
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 0;
+}
+
+#banner h2 span {
+    color: #ef3636;
+}
+
+button.normal {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+#banner button:hover {
+    background: #088178;
+    color: #fff;
+
+}
+
+/* Main container styles */
+#sm-banner {
+    display: flex;
+    justify-content: space-between; /* Adds space between banners */
+    align-items: center; /* Vertically aligns content */
+    gap: 20px; /* Adds spacing between banners */
+    padding: 20px;
+    background-color: #f9f9f9; /* Optional background for the section */
+}
+
+/* Each banner box */
+.banner-box {
+    flex: 1; /* Ensures equal width for both banners */
+    height: 50vh; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ), 
+      url("b17.jpg") no-repeat center center;
+    background-size: cover; /* Ensures background image covers entire area */
+    color: white; /* White text for contrast */
+    border-radius: 10px; /* Adds rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Headings and text */
+.banner-box h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.banner-box h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.banner-box span {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Button styles */
+.banner-box button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #ff0022;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.banner-box button:hover {
+    background-color: #04172b; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sm-banner {
+        flex-direction: column; /* Stacks banners vertically on smaller screens */
+    }
+
+    .banner-box {
+        height: 40vh; /* Adjust height for smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
